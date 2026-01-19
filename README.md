@@ -7,11 +7,15 @@ This repository is preserved for **educational and architectural analysis**, wit
 
 > 📌 **EDUCATIONAL VIDEO CONTENT**
 > 
-> ** The Youtube Playlist  **
+> **The Youtube Playlist**
+> 
 Series of videos that show how this old legacy code is rewritten.
+
 https://youtu.be/P26t5EVz70U
+
 https://www.youtube.com/@CodelessDeveloper
 
+---
 
 > ⚠️ **IMPORTANT NOTICE**
 >
