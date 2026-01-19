@@ -5,6 +5,14 @@ It represents a **real-world, enterprise, monolithic, pre-.NET Core application*
 
 This repository is preserved for **educational and architectural analysis**, with a focus on **legacy system design, technical debt, refactoring strategy, and modernization planning**.
 
+> 📌 **EDUCATIONAL VIDEO CONTENT**
+> 
+> ** The Youtube Playlist  **
+Series of videos that show how this old legacy code is rewritten.
+https://youtu.be/P26t5EVz70U
+https://www.youtube.com/@CodelessDeveloper
+
+
 > ⚠️ **IMPORTANT NOTICE**
 >
 > **This solution DOES NOT compile and DOES NOT include a database.**
