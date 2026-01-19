@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="75b21ec53940482eb967dadc0058cb5a" Name="Diagram1" ZoomLevel="69">
+        <EntityTypeShape EntityType="Lottron2000Model.DrawPayout" Width="1.5" PointX="12" PointY="1.125" />
+        <EntityTypeShape EntityType="Lottron2000Model.MockWinningPrize" Width="1.5" PointX="15" PointY="2.625" />
+        <EntityTypeShape EntityType="Lottron2000Model.MockWinningPrizeShare" Width="1.5" PointX="18" PointY="4.125" />
+        <EntityTypeShape EntityType="Lottron2000Model.PlayingSession" Width="1.5" PointX="0.5" PointY="5.625" />
+        <EntityTypeShape EntityType="Lottron2000Model.ResultCheckSumSa" Width="1.5" PointX="3" PointY="7.125" />
+        <EntityTypeShape EntityType="Lottron2000Model.SALottoPlusResult" Width="1.5" PointX="6" PointY="8.625" />
+        <EntityTypeShape EntityType="Lottron2000Model.SALottoPlusResultCheckSum" Width="1.5" PointX="9" PointY="10.125" />
+        <EntityTypeShape EntityType="Lottron2000Model.SALottoResult" Width="1.5" PointX="12" PointY="11.625" />
+        <EntityTypeShape EntityType="Lottron2000Model.SALottoResultCheckSum" Width="1.5" PointX="15" PointY="13.125" />
+        <EntityTypeShape EntityType="Lottron2000Model.SATicketPrice" Width="1.5" PointX="18" PointY="14.625" />
+        <EntityTypeShape EntityType="Lottron2000Model.SimulatedDraw" Width="1.5" PointX="0.5" PointY="16.125" />
+        <EntityTypeShape EntityType="Lottron2000Model.SimulatedDrawPrize" Width="1.5" PointX="3" PointY="17.625" />
+        <EntityTypeShape EntityType="Lottron2000Model.SimulatedDrawResult" Width="1.5" PointX="6" PointY="19.125" />
+        <EntityTypeShape EntityType="Lottron2000Model.SimulatedDrawTicket" Width="1.5" PointX="9" PointY="20.625" />
+        <EntityTypeShape EntityType="Lottron2000Model.SimulatedDrawTicketResult" Width="1.5" PointX="12" PointY="22.125" />
+        <EntityTypeShape EntityType="Lottron2000Model.SimulatedDrawWinningNumber" Width="1.5" PointX="15" PointY="23.625" />
+        <EntityTypeShape EntityType="Lottron2000Model.WinningChance" Width="1.5" PointX="18" PointY="25.125" />
+        <EntityTypeShape EntityType="Lottron2000Model.WinningNumberPermutation" Width="1.5" PointX="0.5" PointY="26.625" />
+        <AssociationConnector Association="Lottron2000Model.FK_SimulatedDraw_PlayingSession" />
+        <AssociationConnector Association="Lottron2000Model.FK_SALottoPlusResultCheckSum_ResultCheckSumSA" />
+        <AssociationConnector Association="Lottron2000Model.FK_SALottoResultCheckSum_ResultCheckSumSA" />
+        <AssociationConnector Association="Lottron2000Model.FK_SALottoPlusResultCheckSum_SALottoPlusResult" />
+        <AssociationConnector Association="Lottron2000Model.FK_SALottoResultCheckSum_SALottoResult" />
+        <AssociationConnector Association="Lottron2000Model.FK_SimulatedDrawPrize_SimulatedDraw" />
+        <AssociationConnector Association="Lottron2000Model.FK_SimulatedDrawResult_SimulatedDraw" />
+        <AssociationConnector Association="Lottron2000Model.FK_SimulatedDrawTicket_SimulatedDraw" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

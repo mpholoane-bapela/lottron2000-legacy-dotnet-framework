@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2430A66E-497A-4AB8-9D5D-87849264C2B0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lottron2000.Data</RootNamespace>
+    <AssemblyName>Lottron2000.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Alexis.Ydin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Users\EBapela\Dropbox\PROJECTS\SELLER_ELECTRIC\bin_Repositories\0_All\Alexis.Ydin.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\REPOSITORIES_Base\CheckSum\IResultCheckSumSa.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\CheckSum\ISALottoPlusResultCheckSum.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\CheckSum\ISALottoResultCheckSum.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\WinningPrize\IMockWinningPrize.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\WinningPrize\IMockWinningPrizeShare.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\WinningPrize\ISimulatedDrawPrize.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\zOthers\IDrawPayout.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\zOthers\ISATicketPrice.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\SimulatedDraw\IPlayingSession.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\SimulatedDraw\ISimulatedDraw.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\SimulatedDraw\ISimulatedDrawResult.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\SimulatedDraw\ISimulatedDrawTicket.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\SimulatedDraw\ISimulatedDrawTicketResult.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\SimulatedDraw\ISimulatedDrawWinningNumber.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\WinningChances\IWinningChance.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\WinningChances\IWinningNumberPermutation.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\1_Generic\IRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\zOthers\ISALottoPlusResult.cs" />
+    <Compile Include="DAL\REPOSITORIES_Base\zOthers\ISALottoResult.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\CheckSum\ResultCheckSumSa_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\CheckSum\SALottoPlusResultCheckSum_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\CheckSum\SALottoResultCheckSum_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\SimulatedDraw\PlayingSession_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\SimulatedDraw\SimulatedDrawResult_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\SimulatedDraw\SimulatedDrawTicketResult_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\SimulatedDraw\SimulatedDrawTicket_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\SimulatedDraw\SimulatedDrawWinningNumber_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\SimulatedDraw\SimulatedDraw_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\WinningChances\WinningChance_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\WinningChances\WinningNumberPermutation_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\WinningPrize\MockWinningPrizeShare_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\WinningPrize\MockWinningPrize_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\WinningPrize\SimulatedDrawPrize_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\zOthers\DrawPayout_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\zOthers\SALottoPlusResult_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\zOthers\SALottoResult_EntityFrameworkRepository.cs" />
+    <Compile Include="DAL\REPOSITORIES_EntityFramework\zOthers\SATicketPrice_EntityFrameworkRepository.cs" />
+    <Compile Include="DrawPayout.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lottron2000.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lottron2000.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lottron2000.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lottron2000.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lottron2000.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MockWinningPrize.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MockWinningPrizeShare.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlayingSession.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultCheckSumSa.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SALottoPlusResult.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SALottoPlusResultCheckSum.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SALottoResult.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SALottoResultCheckSum.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SATicketPrice.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SimulatedDraw.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SimulatedDrawPrize.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SimulatedDrawResult.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SimulatedDrawTicket.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SimulatedDrawTicketResult.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SimulatedDrawWinningNumber.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WinningChance.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WinningNumberPermutation.cs">
+      <DependentUpon>Lottron2000.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="Lottron2000.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Lottron2000.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Lottron2000.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Lottron2000.edmx</DependentUpon>
+      <LastGenOutput>Lottron2000.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Lottron2000.edmx.diagram">
+      <DependentUpon>Lottron2000.edmx</DependentUpon>
+    </None>
+    <None Include="Lottron2000.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Lottron2000.edmx</DependentUpon>
+      <LastGenOutput>Lottron2000.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lottron2000.Ydin\Lottron2000.Ydin.csproj">
+      <Project>{ca9d313b-fe38-4a54-8a8b-d4d5be59f23e}</Project>
+      <Name>Lottron2000.Ydin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

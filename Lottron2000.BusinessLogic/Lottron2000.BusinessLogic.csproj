@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BEF4A100-80A0-433D-8387-899A27CFC7A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lottron2000.BusinessLogic</RootNamespace>
+    <AssemblyName>Lottron2000.BusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Alexis.Ydin">
+      <HintPath>..\..\..\..\Users\EBapela\Dropbox\PROJECTS\SELLER_ELECTRIC\bin_Repositories\0_All\Alexis.Ydin.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BAL\AutoMappers\MockWinningPrizeShare_AutoMapperConfig.cs" />
+    <Compile Include="BAL\AutoMappers\MockWinningPrize_AutoMapperConfig.cs" />
+    <Compile Include="BAL\AutoMappers\SimulatedDrawResult_AutoMapperConfig.cs" />
+    <Compile Include="BAL\AutoMappers\SimulatedDrawTicketResult_AutoMapperConfig.cs" />
+    <Compile Include="BAL\AutoMappers\SimulatedDrawWinningNumber_AutoMapperConfig.cs" />
+    <Compile Include="BAL\AutoMappers\SALottoPlusResults_AutoMapperConfig.cs" />
+    <Compile Include="BAL\AutoMappers\SALottoResults_AutoMapperConfig.cs" />
+    <Compile Include="BAL\AutoMappers\SimulatedDrawTicket_AutoMapperConfig.cs" />
+    <Compile Include="BAL\CheckSum\ResultCheckSumSaBL.cs" />
+    <Compile Include="BAL\CheckSum\SALottoPlusResultCheckSumBL.cs" />
+    <Compile Include="BAL\CheckSum\SALottoResultCheckSumBL.cs" />
+    <Compile Include="BAL\DrawPayoutBL.cs" />
+    <Compile Include="BAL\PlayingSessionBL.cs" />
+    <Compile Include="BAL\WinningPrize\MockWinningPrizeBL.cs" />
+    <Compile Include="BAL\WinningPrize\MockWinningPrizeShareBL.cs" />
+    <Compile Include="BAL\WinningPrize\SimulatedDrawPrizeBL.cs" />
+    <Compile Include="BAL\SALottoPlusResultBL.cs" />
+    <Compile Include="BAL\SALottoResultBL.cs" />
+    <Compile Include="DOMAIN\2_LotteryNumbersGenerator\LotteryNumbersGenerator_Base.cs" />
+    <Compile Include="DOMAIN\2_LotteryNumbersGenerator\LotteryNumbersGenerator_WinningNumbers.cs" />
+    <Compile Include="DOMAIN\2_LotteryNumbersGenerator\LotteryNumbersGenerator_PlayingTicketNumbers.cs" />
+    <Compile Include="DOMAIN\1_SimulatedDraw\SimulatedDrawDriver.cs" />
+    <Compile Include="DOMAIN\3_Winning\MockWinningPrizeGenerator_Payout.cs" />
+    <Compile Include="DOMAIN\3_Winning\TicketToWinningMatcher.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BAL\SATicketPriceBL.cs" />
+    <Compile Include="BAL\SimulatedDrawBL.cs" />
+    <Compile Include="BAL\SimulatedDrawResultBL.cs" />
+    <Compile Include="BAL\SimulatedDrawTicketBL.cs" />
+    <Compile Include="BAL\SimulatedDrawTicketResultBL.cs" />
+    <Compile Include="BAL\SimulatedDrawWinningNumberBL.cs" />
+    <Compile Include="BAL\WinningChanceBL.cs" />
+    <Compile Include="BAL\WinningNumberPermutationBL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lottron2000.Data\Lottron2000.Data.csproj">
+      <Project>{2430a66e-497a-4ab8-9d5d-87849264c2b0}</Project>
+      <Name>Lottron2000.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottron2000.Models\Lottron2000.Models.csproj">
+      <Project>{30122630-3bbb-4c34-b3d4-550128c7c04d}</Project>
+      <Name>Lottron2000.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottron2000.Ydin\Lottron2000.Ydin.csproj">
+      <Project>{ca9d313b-fe38-4a54-8a8b-d4d5be59f23e}</Project>
+      <Name>Lottron2000.Ydin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll">
+      <Link>AutoMapper.Net4.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DOMAIN\PlayingSession\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

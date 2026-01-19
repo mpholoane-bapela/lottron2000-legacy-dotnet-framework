@@ -1,0 +1,1324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Lottron2000Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Lottron2000ModelStoreContainer">
+          <EntitySet Name="DrawPayout" EntityType="Lottron2000Model.Store.DrawPayout" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MockWinningPrize" EntityType="Lottron2000Model.Store.MockWinningPrize" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MockWinningPrizeShare" EntityType="Lottron2000Model.Store.MockWinningPrizeShare" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PlayingSession" EntityType="Lottron2000Model.Store.PlayingSession" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ResultCheckSumSa" EntityType="Lottron2000Model.Store.ResultCheckSumSa" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SALottoPlusResult" EntityType="Lottron2000Model.Store.SALottoPlusResult" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SALottoPlusResultCheckSum" EntityType="Lottron2000Model.Store.SALottoPlusResultCheckSum" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SALottoResult" EntityType="Lottron2000Model.Store.SALottoResult" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SALottoResultCheckSum" EntityType="Lottron2000Model.Store.SALottoResultCheckSum" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SATicketPrice" EntityType="Lottron2000Model.Store.SATicketPrice" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SimulatedDraw" EntityType="Lottron2000Model.Store.SimulatedDraw" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SimulatedDrawPrize" EntityType="Lottron2000Model.Store.SimulatedDrawPrize" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SimulatedDrawResult" EntityType="Lottron2000Model.Store.SimulatedDrawResult" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SimulatedDrawTicket" EntityType="Lottron2000Model.Store.SimulatedDrawTicket" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SimulatedDrawTicketResult" EntityType="Lottron2000Model.Store.SimulatedDrawTicketResult" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SimulatedDrawWinningNumber" EntityType="Lottron2000Model.Store.SimulatedDrawWinningNumber" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WinningChance" EntityType="Lottron2000Model.Store.WinningChance" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WinningNumberPermutation" EntityType="Lottron2000Model.Store.WinningNumberPermutation" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_SALottoPlusResultCheckSum_ResultCheckSumSA" Association="Lottron2000Model.Store.FK_SALottoPlusResultCheckSum_ResultCheckSumSA">
+            <End Role="ResultCheckSumSa" EntitySet="ResultCheckSumSa" />
+            <End Role="SALottoPlusResultCheckSum" EntitySet="SALottoPlusResultCheckSum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SALottoPlusResultCheckSum_SALottoPlusResult" Association="Lottron2000Model.Store.FK_SALottoPlusResultCheckSum_SALottoPlusResult">
+            <End Role="SALottoPlusResult" EntitySet="SALottoPlusResult" />
+            <End Role="SALottoPlusResultCheckSum" EntitySet="SALottoPlusResultCheckSum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SALottoResultCheckSum_ResultCheckSumSA" Association="Lottron2000Model.Store.FK_SALottoResultCheckSum_ResultCheckSumSA">
+            <End Role="ResultCheckSumSa" EntitySet="ResultCheckSumSa" />
+            <End Role="SALottoResultCheckSum" EntitySet="SALottoResultCheckSum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SALottoResultCheckSum_SALottoResult" Association="Lottron2000Model.Store.FK_SALottoResultCheckSum_SALottoResult">
+            <End Role="SALottoResult" EntitySet="SALottoResult" />
+            <End Role="SALottoResultCheckSum" EntitySet="SALottoResultCheckSum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SimulatedDraw_PlayingSession" Association="Lottron2000Model.Store.FK_SimulatedDraw_PlayingSession">
+            <End Role="PlayingSession" EntitySet="PlayingSession" />
+            <End Role="SimulatedDraw" EntitySet="SimulatedDraw" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SimulatedDrawPrize_SimulatedDraw" Association="Lottron2000Model.Store.FK_SimulatedDrawPrize_SimulatedDraw">
+            <End Role="SimulatedDraw" EntitySet="SimulatedDraw" />
+            <End Role="SimulatedDrawPrize" EntitySet="SimulatedDrawPrize" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SimulatedDrawResult_SimulatedDraw" Association="Lottron2000Model.Store.FK_SimulatedDrawResult_SimulatedDraw">
+            <End Role="SimulatedDraw" EntitySet="SimulatedDraw" />
+            <End Role="SimulatedDrawResult" EntitySet="SimulatedDrawResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SimulatedDrawTicket_SimulatedDraw" Association="Lottron2000Model.Store.FK_SimulatedDrawTicket_SimulatedDraw">
+            <End Role="SimulatedDraw" EntitySet="SimulatedDraw" />
+            <End Role="SimulatedDrawTicket" EntitySet="SimulatedDrawTicket" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DrawPayout">
+          <Key>
+            <PropertyRef Name="DrawPayoutID" />
+          </Key>
+          <Property Name="ItemID" Type="int" Nullable="false" />
+          <Property Name="DrawPayoutID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Division" Type="nvarchar" MaxLength="50" />
+          <Property Name="PeriodStart" Type="datetime" />
+          <Property Name="PerionEnd" Type="datetime" />
+          <Property Name="TotalDrawEvents" Type="int" />
+          <Property Name="TotalWinners" Type="int" />
+          <Property Name="TotalPayout" Type="int" />
+          <Property Name="AverageWinners" Type="int" />
+          <Property Name="AveragePayout" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="MockWinningPrize">
+          <Key>
+            <PropertyRef Name="MockWinningPrizeID" />
+          </Key>
+          <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MockWinningPrizeID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SourceDrawNo" Type="int" />
+          <Property Name="DrawSubCategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="Div1" Type="int" />
+          <Property Name="Div2" Type="int" />
+          <Property Name="Div3" Type="int" />
+          <Property Name="Div4" Type="int" />
+          <Property Name="Div5" Type="int" />
+          <Property Name="Div6" Type="int" />
+          <Property Name="Div7" Type="int" />
+          <Property Name="CountryID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Created" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MockWinningPrizeShare">
+          <Key>
+            <PropertyRef Name="MockWinningPrizeShareID" />
+          </Key>
+          <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MockWinningPrizeShareID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SourceDrawNo" Type="int" />
+          <Property Name="DrawSubCategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="Div1Winners" Type="int" />
+          <Property Name="Div2Winners" Type="int" />
+          <Property Name="Div3Winners" Type="int" />
+          <Property Name="Div4Winners" Type="int" />
+          <Property Name="Div5Winners" Type="int" />
+          <Property Name="Div6Winners" Type="int" />
+          <Property Name="Div7Winners" Type="int" />
+          <Property Name="CountryID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Created" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PlayingSession">
+          <Key>
+            <PropertyRef Name="PlayingSessionID" />
+          </Key>
+          <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PlayingSessionID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SimulationType" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserFriendlyReference" Type="nvarchar" MaxLength="50" />
+          <Property Name="Objectives" Type="ntext" />
+          <Property Name="Notes" Type="ntext" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="PublishStatus" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ResultCheckSumSa">
+          <Key>
+            <PropertyRef Name="ResultCheckSumSaID" />
+          </Key>
+          <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ResultCheckSumSaID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DrawSubCategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="CheckSum" Type="int" Nullable="false" />
+          <Property Name="Count" Type="int" />
+          <Property Name="OccuranceRatio" Type="decimal" Precision="10" Scale="9" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="LastComputed" Type="datetime" />
+          <Property Name="Created" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SALottoPlusResult">
+          <Key>
+            <PropertyRef Name="SALottoPlusResultID" />
+          </Key>
+          <Property Name="ItemID" Type="int" />
+          <Property Name="SALottoPlusResultID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DrawNo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DrawDate" Type="datetime" />
+          <Property Name="Ball1" Type="int" Nullable="false" />
+          <Property Name="Ball2" Type="int" Nullable="false" />
+          <Property Name="Ball3" Type="int" Nullable="false" />
+          <Property Name="Ball4" Type="int" Nullable="false" />
+          <Property Name="Ball5" Type="int" Nullable="false" />
+          <Property Name="Ball6" Type="int" Nullable="false" />
+          <Property Name="BonusBall" Type="int" Nullable="false" />
+          <Property Name="CheckSum" Type="int" />
+          <Property Name="Div1" Type="int" />
+          <Property Name="Div2" Type="int" />
+          <Property Name="Div3" Type="int" />
+          <Property Name="Div4" Type="int" />
+          <Property Name="Div5" Type="int" />
+          <Property Name="Div6" Type="int" />
+          <Property Name="Div7" Type="int" />
+          <Property Name="Div1Winners" Type="int" />
+          <Property Name="Div2NoWinners" Type="int" />
+          <Property Name="Div3Winners" Type="int" />
+          <Property Name="Div4Winners" Type="int" />
+          <Property Name="Div5Winners" Type="int" />
+          <Property Name="Div6NoWinners" Type="int" />
+          <Property Name="Div7Winners" Type="int" />
+          <Property Name="PrizePayable" Type="int" />
+          <Property Name="Rollover" Type="int" />
+          <Property Name="RolloverCount" Type="int" />
+          <Property Name="NextEstimatedJackpot" Type="int" />
+          <Property Name="NextGuaranteedJackpot" Type="int" />
+          <Property Name="TotalSales" Type="int" />
+          <Property Name="DrawMachine" Type="nvarchar" MaxLength="255" />
+          <Property Name="BallSet" Type="int" />
+        </EntityType>
+        <EntityType Name="SALottoPlusResultCheckSum">
+          <Key>
+            <PropertyRef Name="SALottoPlusResultCheckSumID" />
+          </Key>
+          <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SALottoPlusResultCheckSumID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ResultCheckSumSaID" Type="nvarchar" MaxLength="50" />
+          <Property Name="SALottoPlusResultID" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SALottoResult">
+          <Key>
+            <PropertyRef Name="SALottoResultID" />
+          </Key>
+          <Property Name="ItemID" Type="int" />
+          <Property Name="SALottoResultID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DrawNo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DrawDate" Type="datetime" />
+          <Property Name="Ball1" Type="int" Nullable="false" />
+          <Property Name="Ball2" Type="int" Nullable="false" />
+          <Property Name="Ball3" Type="int" Nullable="false" />
+          <Property Name="Ball4" Type="int" Nullable="false" />
+          <Property Name="Ball5" Type="int" Nullable="false" />
+          <Property Name="Ball6" Type="int" Nullable="false" />
+          <Property Name="BonusBall" Type="int" Nullable="false" />
+          <Property Name="CheckSum" Type="int" />
+          <Property Name="Div1" Type="int" />
+          <Property Name="Div2" Type="int" />
+          <Property Name="Div3" Type="int" />
+          <Property Name="Div4" Type="int" />
+          <Property Name="Div5" Type="int" />
+          <Property Name="Div6" Type="int" />
+          <Property Name="Div7" Type="int" />
+          <Property Name="Div1Winners" Type="int" />
+          <Property Name="Div2NoWinners" Type="int" />
+          <Property Name="Div3Winners" Type="int" />
+          <Property Name="Div4Winners" Type="int" />
+          <Property Name="Div5Winners" Type="int" />
+          <Property Name="Div6NoWinners" Type="int" />
+          <Property Name="Div7Winners" Type="int" />
+          <Property Name="PrizePayable" Type="int" />
+          <Property Name="Rollover" Type="int" />
+          <Property Name="RolloverCount" Type="int" />
+          <Property Name="NextEstimatedJackpot" Type="int" />
+          <Property Name="NextGuaranteedJackpot" Type="int" />
+          <Property Name="TotalSales" Type="int" />
+          <Property Name="DrawMachine" Type="nvarchar" MaxLength="255" />
+          <Property Name="BallSet" Type="int" />
+        </EntityType>
+        <EntityType Name="SALottoResultCheckSum">
+          <Key>
+            <PropertyRef Name="SALottoResultCheckSumID" />
+          </Key>
+          <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SALottoResultCheckSumID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ResultCheckSumSaID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SALottoResultID" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SATicketPrice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LottoType" Type="nvarchar" MaxLength="50" />
+          <Property Name="TicketPrice" Type="money" />
+        </EntityType>
+        <EntityType Name="SimulatedDraw">
+          <Key>
+            <PropertyRef Name="SimulatedDrawID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SimulatedDrawID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="PlayingSessionID" Type="nvarchar" MaxLength="50" />
+          <Property Name="SimulationType" Type="nvarchar" MaxLength="50" />
+          <Property Name="WinningNumbersGenerationMethod" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlayingNumbersGenerationMethod" Type="nvarchar" MaxLength="50" />
+          <Property Name="DrawPrizeGenerationMethod" Type="nvarchar" MaxLength="50" />
+          <Property Name="Created" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SimulatedDrawPrize">
+          <Key>
+            <PropertyRef Name="SimulatedDrawPrizeID" />
+          </Key>
+          <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SimulatedDrawPrizeID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SimulatedDrawID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="DrawSubCategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="Div1" Type="int" />
+          <Property Name="Div2" Type="int" />
+          <Property Name="Div3" Type="int" />
+          <Property Name="Div4" Type="int" />
+          <Property Name="Div5" Type="int" />
+          <Property Name="Div6" Type="int" />
+          <Property Name="Div7" Type="int" />
+          <Property Name="Div1Winners" Type="int" />
+          <Property Name="Div2Winners" Type="int" />
+          <Property Name="Div3Winners" Type="int" />
+          <Property Name="Div4Winners" Type="int" />
+          <Property Name="Div5Winners" Type="int" />
+          <Property Name="Div6Winners" Type="int" />
+          <Property Name="Div7Winners" Type="int" />
+        </EntityType>
+        <EntityType Name="SimulatedDrawResult">
+          <Key>
+            <PropertyRef Name="SimulatedDrawResultID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SimulatedDrawResultID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SimulatedDrawID" Type="nvarchar" MaxLength="50" />
+          <Property Name="AmountWon" Type="int" />
+          <Property Name="AmountLost" Type="int" />
+          <Property Name="AmountSpent" Type="int" />
+          <Property Name="Num1Matches" Type="int" />
+          <Property Name="Num2Matches" Type="int" />
+          <Property Name="Num3Matches" Type="int" />
+          <Property Name="Num4Matches" Type="int" />
+          <Property Name="Num5Matches" Type="int" />
+          <Property Name="Num6Matches" Type="int" />
+          <Property Name="BonusMatches" Type="int" />
+          <Property Name="Created" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SimulatedDrawTicket">
+          <Key>
+            <PropertyRef Name="SimulatedDrawTicketID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SimulatedDrawTicketID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SimulatedDrawID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Num1" Type="int" />
+          <Property Name="Num2" Type="int" />
+          <Property Name="Num3" Type="int" />
+          <Property Name="Num4" Type="int" />
+          <Property Name="Num5" Type="int" />
+          <Property Name="Num6" Type="int" />
+          <Property Name="NumCheckSum" Type="int" />
+          <Property Name="NumAndBonusCheckSum" Type="int" />
+          <Property Name="Bonus" Type="int" />
+          <Property Name="Created" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SimulatedDrawTicketResult">
+          <Key>
+            <PropertyRef Name="SimulatedDrawTicketResultID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SimulatedDrawTicketResultID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SimulatedDrawTicketID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DrawSubCategory" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="WinningDivision" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="NumberOfMatches" Type="int" Nullable="false" />
+          <Property Name="BonusMatch" Type="bit" Nullable="false" />
+          <Property Name="IsJackpotWinner" Type="bit" Nullable="false" />
+          <Property Name="AmountWon" Type="int" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SimulatedDrawWinningNumber">
+          <Key>
+            <PropertyRef Name="SimulatedDrawWinningNumbersID" />
+          </Key>
+          <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SimulatedDrawWinningNumbersID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SimulatedDrawID" Type="nvarchar" MaxLength="50" />
+          <Property Name="DrawSubCategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="Num1" Type="int" />
+          <Property Name="Num2" Type="int" />
+          <Property Name="Num3" Type="int" />
+          <Property Name="Num4" Type="int" />
+          <Property Name="Num5" Type="int" />
+          <Property Name="Num6" Type="int" />
+          <Property Name="NumCheckSum" Type="int" />
+          <Property Name="Bonus" Type="int" />
+          <Property Name="Created" Type="datetime" />
+        </EntityType>
+        <EntityType Name="WinningChance">
+          <Key>
+            <PropertyRef Name="WinningChanceID" />
+          </Key>
+          <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="WinningChanceID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="PayoutOrder" Type="int" />
+          <Property Name="Division" Type="nvarchar" MaxLength="50" />
+          <Property Name="Odds" Type="int" />
+          <Property Name="Fraction" Type="decimal" Precision="15" Scale="10" />
+          <Property Name="Percentage" Type="decimal" Precision="15" Scale="10" />
+          <Property Name="DivisionDescription" Type="ntext" />
+        </EntityType>
+        <EntityType Name="WinningNumberPermutation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Number1" Type="int" />
+          <Property Name="Number2" Type="int" />
+          <Property Name="Number3" Type="int" />
+          <Property Name="Number4" Type="int" />
+          <Property Name="Number5" Type="int" />
+          <Property Name="Number6" Type="int" />
+          <Property Name="Bonus" Type="int" />
+          <Property Name="CheckSum" Type="int" />
+          <Property Name="Created" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_SALottoPlusResultCheckSum_ResultCheckSumSA">
+          <End Role="ResultCheckSumSa" Type="Lottron2000Model.Store.ResultCheckSumSa" Multiplicity="0..1" />
+          <End Role="SALottoPlusResultCheckSum" Type="Lottron2000Model.Store.SALottoPlusResultCheckSum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResultCheckSumSa">
+              <PropertyRef Name="ResultCheckSumSaID" />
+            </Principal>
+            <Dependent Role="SALottoPlusResultCheckSum">
+              <PropertyRef Name="ResultCheckSumSaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SALottoPlusResultCheckSum_SALottoPlusResult">
+          <End Role="SALottoPlusResult" Type="Lottron2000Model.Store.SALottoPlusResult" Multiplicity="0..1" />
+          <End Role="SALottoPlusResultCheckSum" Type="Lottron2000Model.Store.SALottoPlusResultCheckSum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SALottoPlusResult">
+              <PropertyRef Name="SALottoPlusResultID" />
+            </Principal>
+            <Dependent Role="SALottoPlusResultCheckSum">
+              <PropertyRef Name="SALottoPlusResultID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SALottoResultCheckSum_ResultCheckSumSA">
+          <End Role="ResultCheckSumSa" Type="Lottron2000Model.Store.ResultCheckSumSa" Multiplicity="1" />
+          <End Role="SALottoResultCheckSum" Type="Lottron2000Model.Store.SALottoResultCheckSum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResultCheckSumSa">
+              <PropertyRef Name="ResultCheckSumSaID" />
+            </Principal>
+            <Dependent Role="SALottoResultCheckSum">
+              <PropertyRef Name="ResultCheckSumSaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SALottoResultCheckSum_SALottoResult">
+          <End Role="SALottoResult" Type="Lottron2000Model.Store.SALottoResult" Multiplicity="1" />
+          <End Role="SALottoResultCheckSum" Type="Lottron2000Model.Store.SALottoResultCheckSum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SALottoResult">
+              <PropertyRef Name="SALottoResultID" />
+            </Principal>
+            <Dependent Role="SALottoResultCheckSum">
+              <PropertyRef Name="SALottoResultID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SimulatedDraw_PlayingSession">
+          <End Role="PlayingSession" Type="Lottron2000Model.Store.PlayingSession" Multiplicity="0..1" />
+          <End Role="SimulatedDraw" Type="Lottron2000Model.Store.SimulatedDraw" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayingSession">
+              <PropertyRef Name="PlayingSessionID" />
+            </Principal>
+            <Dependent Role="SimulatedDraw">
+              <PropertyRef Name="PlayingSessionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SimulatedDrawPrize_SimulatedDraw">
+          <End Role="SimulatedDraw" Type="Lottron2000Model.Store.SimulatedDraw" Multiplicity="0..1" />
+          <End Role="SimulatedDrawPrize" Type="Lottron2000Model.Store.SimulatedDrawPrize" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SimulatedDraw">
+              <PropertyRef Name="SimulatedDrawID" />
+            </Principal>
+            <Dependent Role="SimulatedDrawPrize">
+              <PropertyRef Name="SimulatedDrawID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SimulatedDrawResult_SimulatedDraw">
+          <End Role="SimulatedDraw" Type="Lottron2000Model.Store.SimulatedDraw" Multiplicity="0..1" />
+          <End Role="SimulatedDrawResult" Type="Lottron2000Model.Store.SimulatedDrawResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SimulatedDraw">
+              <PropertyRef Name="SimulatedDrawID" />
+            </Principal>
+            <Dependent Role="SimulatedDrawResult">
+              <PropertyRef Name="SimulatedDrawID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SimulatedDrawTicket_SimulatedDraw">
+          <End Role="SimulatedDraw" Type="Lottron2000Model.Store.SimulatedDraw" Multiplicity="0..1" />
+          <End Role="SimulatedDrawTicket" Type="Lottron2000Model.Store.SimulatedDrawTicket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SimulatedDraw">
+              <PropertyRef Name="SimulatedDrawID" />
+            </Principal>
+            <Dependent Role="SimulatedDrawTicket">
+              <PropertyRef Name="SimulatedDrawID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Lottron2000Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LottronEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="DrawPayouts" EntityType="Lottron2000Model.DrawPayout" />
+          <EntitySet Name="MockWinningPrizes" EntityType="Lottron2000Model.MockWinningPrize" />
+          <EntitySet Name="MockWinningPrizeShares" EntityType="Lottron2000Model.MockWinningPrizeShare" />
+          <EntitySet Name="PlayingSessions" EntityType="Lottron2000Model.PlayingSession" />
+          <EntitySet Name="ResultCheckSumSas" EntityType="Lottron2000Model.ResultCheckSumSa" />
+          <EntitySet Name="SALottoPlusResults" EntityType="Lottron2000Model.SALottoPlusResult" />
+          <EntitySet Name="SALottoPlusResultCheckSums" EntityType="Lottron2000Model.SALottoPlusResultCheckSum" />
+          <EntitySet Name="SALottoResults" EntityType="Lottron2000Model.SALottoResult" />
+          <EntitySet Name="SALottoResultCheckSums" EntityType="Lottron2000Model.SALottoResultCheckSum" />
+          <EntitySet Name="SATicketPrices" EntityType="Lottron2000Model.SATicketPrice" />
+          <EntitySet Name="SimulatedDraws" EntityType="Lottron2000Model.SimulatedDraw" />
+          <EntitySet Name="SimulatedDrawPrizes" EntityType="Lottron2000Model.SimulatedDrawPrize" />
+          <EntitySet Name="SimulatedDrawResults" EntityType="Lottron2000Model.SimulatedDrawResult" />
+          <EntitySet Name="SimulatedDrawTickets" EntityType="Lottron2000Model.SimulatedDrawTicket" />
+          <EntitySet Name="SimulatedDrawTicketResults" EntityType="Lottron2000Model.SimulatedDrawTicketResult" />
+          <EntitySet Name="SimulatedDrawWinningNumbers" EntityType="Lottron2000Model.SimulatedDrawWinningNumber" />
+          <EntitySet Name="WinningChances" EntityType="Lottron2000Model.WinningChance" />
+          <EntitySet Name="WinningNumberPermutations" EntityType="Lottron2000Model.WinningNumberPermutation" />
+          <AssociationSet Name="FK_SimulatedDraw_PlayingSession" Association="Lottron2000Model.FK_SimulatedDraw_PlayingSession">
+            <End Role="PlayingSession" EntitySet="PlayingSessions" />
+            <End Role="SimulatedDraw" EntitySet="SimulatedDraws" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SALottoPlusResultCheckSum_ResultCheckSumSA" Association="Lottron2000Model.FK_SALottoPlusResultCheckSum_ResultCheckSumSA">
+            <End Role="ResultCheckSumSa" EntitySet="ResultCheckSumSas" />
+            <End Role="SALottoPlusResultCheckSum" EntitySet="SALottoPlusResultCheckSums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SALottoResultCheckSum_ResultCheckSumSA" Association="Lottron2000Model.FK_SALottoResultCheckSum_ResultCheckSumSA">
+            <End Role="ResultCheckSumSa" EntitySet="ResultCheckSumSas" />
+            <End Role="SALottoResultCheckSum" EntitySet="SALottoResultCheckSums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SALottoPlusResultCheckSum_SALottoPlusResult" Association="Lottron2000Model.FK_SALottoPlusResultCheckSum_SALottoPlusResult">
+            <End Role="SALottoPlusResult" EntitySet="SALottoPlusResults" />
+            <End Role="SALottoPlusResultCheckSum" EntitySet="SALottoPlusResultCheckSums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SALottoResultCheckSum_SALottoResult" Association="Lottron2000Model.FK_SALottoResultCheckSum_SALottoResult">
+            <End Role="SALottoResult" EntitySet="SALottoResults" />
+            <End Role="SALottoResultCheckSum" EntitySet="SALottoResultCheckSums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SimulatedDrawPrize_SimulatedDraw" Association="Lottron2000Model.FK_SimulatedDrawPrize_SimulatedDraw">
+            <End Role="SimulatedDraw" EntitySet="SimulatedDraws" />
+            <End Role="SimulatedDrawPrize" EntitySet="SimulatedDrawPrizes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SimulatedDrawResult_SimulatedDraw" Association="Lottron2000Model.FK_SimulatedDrawResult_SimulatedDraw">
+            <End Role="SimulatedDraw" EntitySet="SimulatedDraws" />
+            <End Role="SimulatedDrawResult" EntitySet="SimulatedDrawResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SimulatedDrawTicket_SimulatedDraw" Association="Lottron2000Model.FK_SimulatedDrawTicket_SimulatedDraw">
+            <End Role="SimulatedDraw" EntitySet="SimulatedDraws" />
+            <End Role="SimulatedDrawTicket" EntitySet="SimulatedDrawTickets" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DrawPayout">
+          <Key>
+            <PropertyRef Name="DrawPayoutID" />
+          </Key>
+          <Property Type="Int32" Name="ItemID" Nullable="false" />
+          <Property Type="String" Name="DrawPayoutID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Division" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="PeriodStart" Precision="3" />
+          <Property Type="DateTime" Name="PerionEnd" Precision="3" />
+          <Property Type="Int32" Name="TotalDrawEvents" />
+          <Property Type="Int32" Name="TotalWinners" />
+          <Property Type="Int32" Name="TotalPayout" />
+          <Property Type="Int32" Name="AverageWinners" />
+          <Property Type="Int32" Name="AveragePayout" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="MockWinningPrize">
+          <Key>
+            <PropertyRef Name="MockWinningPrizeID" />
+          </Key>
+          <Property Type="Int32" Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="MockWinningPrizeID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SourceDrawNo" />
+          <Property Type="String" Name="DrawSubCategory" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Div1" />
+          <Property Type="Int32" Name="Div2" />
+          <Property Type="Int32" Name="Div3" />
+          <Property Type="Int32" Name="Div4" />
+          <Property Type="Int32" Name="Div5" />
+          <Property Type="Int32" Name="Div6" />
+          <Property Type="Int32" Name="Div7" />
+          <Property Type="String" Name="CountryID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Created" Precision="3" />
+        </EntityType>
+        <EntityType Name="MockWinningPrizeShare">
+          <Key>
+            <PropertyRef Name="MockWinningPrizeShareID" />
+          </Key>
+          <Property Type="Int32" Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="MockWinningPrizeShareID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SourceDrawNo" />
+          <Property Type="String" Name="DrawSubCategory" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Div1Winners" />
+          <Property Type="Int32" Name="Div2Winners" />
+          <Property Type="Int32" Name="Div3Winners" />
+          <Property Type="Int32" Name="Div4Winners" />
+          <Property Type="Int32" Name="Div5Winners" />
+          <Property Type="Int32" Name="Div6Winners" />
+          <Property Type="Int32" Name="Div7Winners" />
+          <Property Type="String" Name="CountryID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Created" Precision="3" />
+        </EntityType>
+        <EntityType Name="PlayingSession">
+          <Key>
+            <PropertyRef Name="PlayingSessionID" />
+          </Key>
+          <Property Type="Int32" Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PlayingSessionID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SimulationType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserFriendlyReference" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Objectives" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Created" Precision="3" />
+          <Property Type="String" Name="PublishStatus" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SimulatedDraws" Relationship="Lottron2000Model.FK_SimulatedDraw_PlayingSession" FromRole="PlayingSession" ToRole="SimulatedDraw" />
+        </EntityType>
+        <EntityType Name="ResultCheckSumSa">
+          <Key>
+            <PropertyRef Name="ResultCheckSumSaID" />
+          </Key>
+          <Property Type="Int32" Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ResultCheckSumSaID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DrawSubCategory" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CheckSum" Nullable="false" />
+          <Property Type="Int32" Name="Count" />
+          <Property Type="Decimal" Name="OccuranceRatio" Precision="10" Scale="9" />
+          <Property Type="DateTime" Name="StartDate" Precision="3" />
+          <Property Type="DateTime" Name="EndDate" Precision="3" />
+          <Property Type="DateTime" Name="LastComputed" Precision="3" />
+          <Property Type="DateTime" Name="Created" Precision="3" />
+          <NavigationProperty Name="SALottoPlusResultCheckSums" Relationship="Lottron2000Model.FK_SALottoPlusResultCheckSum_ResultCheckSumSA" FromRole="ResultCheckSumSa" ToRole="SALottoPlusResultCheckSum" />
+          <NavigationProperty Name="SALottoResultCheckSums" Relationship="Lottron2000Model.FK_SALottoResultCheckSum_ResultCheckSumSA" FromRole="ResultCheckSumSa" ToRole="SALottoResultCheckSum" />
+        </EntityType>
+        <EntityType Name="SALottoPlusResult">
+          <Key>
+            <PropertyRef Name="SALottoPlusResultID" />
+          </Key>
+          <Property Type="Int32" Name="ItemID" />
+          <Property Type="String" Name="SALottoPlusResultID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DrawNo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="DrawDate" Precision="3" />
+          <Property Type="Int32" Name="Ball1" Nullable="false" />
+          <Property Type="Int32" Name="Ball2" Nullable="false" />
+          <Property Type="Int32" Name="Ball3" Nullable="false" />
+          <Property Type="Int32" Name="Ball4" Nullable="false" />
+          <Property Type="Int32" Name="Ball5" Nullable="false" />
+          <Property Type="Int32" Name="Ball6" Nullable="false" />
+          <Property Type="Int32" Name="BonusBall" Nullable="false" />
+          <Property Type="Int32" Name="CheckSum" />
+          <Property Type="Int32" Name="Div1" />
+          <Property Type="Int32" Name="Div2" />
+          <Property Type="Int32" Name="Div3" />
+          <Property Type="Int32" Name="Div4" />
+          <Property Type="Int32" Name="Div5" />
+          <Property Type="Int32" Name="Div6" />
+          <Property Type="Int32" Name="Div7" />
+          <Property Type="Int32" Name="Div1Winners" />
+          <Property Type="Int32" Name="Div2NoWinners" />
+          <Property Type="Int32" Name="Div3Winners" />
+          <Property Type="Int32" Name="Div4Winners" />
+          <Property Type="Int32" Name="Div5Winners" />
+          <Property Type="Int32" Name="Div6NoWinners" />
+          <Property Type="Int32" Name="Div7Winners" />
+          <Property Type="Int32" Name="PrizePayable" />
+          <Property Type="Int32" Name="Rollover" />
+          <Property Type="Int32" Name="RolloverCount" />
+          <Property Type="Int32" Name="NextEstimatedJackpot" />
+          <Property Type="Int32" Name="NextGuaranteedJackpot" />
+          <Property Type="Int32" Name="TotalSales" />
+          <Property Type="String" Name="DrawMachine" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="BallSet" />
+          <NavigationProperty Name="SALottoPlusResultCheckSums" Relationship="Lottron2000Model.FK_SALottoPlusResultCheckSum_SALottoPlusResult" FromRole="SALottoPlusResult" ToRole="SALottoPlusResultCheckSum" />
+        </EntityType>
+        <EntityType Name="SALottoPlusResultCheckSum">
+          <Key>
+            <PropertyRef Name="SALottoPlusResultCheckSumID" />
+          </Key>
+          <Property Type="Int32" Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SALottoPlusResultCheckSumID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ResultCheckSumSaID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SALottoPlusResultID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ResultCheckSumSa" Relationship="Lottron2000Model.FK_SALottoPlusResultCheckSum_ResultCheckSumSA" FromRole="SALottoPlusResultCheckSum" ToRole="ResultCheckSumSa" />
+          <NavigationProperty Name="SALottoPlusResult" Relationship="Lottron2000Model.FK_SALottoPlusResultCheckSum_SALottoPlusResult" FromRole="SALottoPlusResultCheckSum" ToRole="SALottoPlusResult" />
+        </EntityType>
+        <EntityType Name="SALottoResult">
+          <Key>
+            <PropertyRef Name="SALottoResultID" />
+          </Key>
+          <Property Type="Int32" Name="ItemID" />
+          <Property Type="String" Name="SALottoResultID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DrawNo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="DrawDate" Precision="3" />
+          <Property Type="Int32" Name="Ball1" Nullable="false" />
+          <Property Type="Int32" Name="Ball2" Nullable="false" />
+          <Property Type="Int32" Name="Ball3" Nullable="false" />
+          <Property Type="Int32" Name="Ball4" Nullable="false" />
+          <Property Type="Int32" Name="Ball5" Nullable="false" />
+          <Property Type="Int32" Name="Ball6" Nullable="false" />
+          <Property Type="Int32" Name="BonusBall" Nullable="false" />
+          <Property Type="Int32" Name="CheckSum" />
+          <Property Type="Int32" Name="Div1" />
+          <Property Type="Int32" Name="Div2" />
+          <Property Type="Int32" Name="Div3" />
+          <Property Type="Int32" Name="Div4" />
+          <Property Type="Int32" Name="Div5" />
+          <Property Type="Int32" Name="Div6" />
+          <Property Type="Int32" Name="Div7" />
+          <Property Type="Int32" Name="Div1Winners" />
+          <Property Type="Int32" Name="Div2NoWinners" />
+          <Property Type="Int32" Name="Div3Winners" />
+          <Property Type="Int32" Name="Div4Winners" />
+          <Property Type="Int32" Name="Div5Winners" />
+          <Property Type="Int32" Name="Div6NoWinners" />
+          <Property Type="Int32" Name="Div7Winners" />
+          <Property Type="Int32" Name="PrizePayable" />
+          <Property Type="Int32" Name="Rollover" />
+          <Property Type="Int32" Name="RolloverCount" />
+          <Property Type="Int32" Name="NextEstimatedJackpot" />
+          <Property Type="Int32" Name="NextGuaranteedJackpot" />
+          <Property Type="Int32" Name="TotalSales" />
+          <Property Type="String" Name="DrawMachine" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="BallSet" />
+          <NavigationProperty Name="SALottoResultCheckSums" Relationship="Lottron2000Model.FK_SALottoResultCheckSum_SALottoResult" FromRole="SALottoResult" ToRole="SALottoResultCheckSum" />
+        </EntityType>
+        <EntityType Name="SALottoResultCheckSum">
+          <Key>
+            <PropertyRef Name="SALottoResultCheckSumID" />
+          </Key>
+          <Property Type="Int32" Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SALottoResultCheckSumID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ResultCheckSumSaID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SALottoResultID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ResultCheckSumSa" Relationship="Lottron2000Model.FK_SALottoResultCheckSum_ResultCheckSumSA" FromRole="SALottoResultCheckSum" ToRole="ResultCheckSumSa" />
+          <NavigationProperty Name="SALottoResult" Relationship="Lottron2000Model.FK_SALottoResultCheckSum_SALottoResult" FromRole="SALottoResultCheckSum" ToRole="SALottoResult" />
+        </EntityType>
+        <EntityType Name="SATicketPrice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="LottoType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="TicketPrice" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="SimulatedDraw">
+          <Key>
+            <PropertyRef Name="SimulatedDrawID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SimulatedDrawID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PlayingSessionID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SimulationType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WinningNumbersGenerationMethod" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PlayingNumbersGenerationMethod" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DrawPrizeGenerationMethod" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Created" Precision="3" />
+          <NavigationProperty Name="PlayingSession" Relationship="Lottron2000Model.FK_SimulatedDraw_PlayingSession" FromRole="SimulatedDraw" ToRole="PlayingSession" />
+          <NavigationProperty Name="SimulatedDrawPrizes" Relationship="Lottron2000Model.FK_SimulatedDrawPrize_SimulatedDraw" FromRole="SimulatedDraw" ToRole="SimulatedDrawPrize" />
+          <NavigationProperty Name="SimulatedDrawResults" Relationship="Lottron2000Model.FK_SimulatedDrawResult_SimulatedDraw" FromRole="SimulatedDraw" ToRole="SimulatedDrawResult" />
+          <NavigationProperty Name="SimulatedDrawTickets" Relationship="Lottron2000Model.FK_SimulatedDrawTicket_SimulatedDraw" FromRole="SimulatedDraw" ToRole="SimulatedDrawTicket" />
+        </EntityType>
+        <EntityType Name="SimulatedDrawPrize">
+          <Key>
+            <PropertyRef Name="SimulatedDrawPrizeID" />
+          </Key>
+          <Property Type="Int32" Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SimulatedDrawPrizeID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SimulatedDrawID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Created" Precision="3" />
+          <Property Type="String" Name="DrawSubCategory" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Div1" />
+          <Property Type="Int32" Name="Div2" />
+          <Property Type="Int32" Name="Div3" />
+          <Property Type="Int32" Name="Div4" />
+          <Property Type="Int32" Name="Div5" />
+          <Property Type="Int32" Name="Div6" />
+          <Property Type="Int32" Name="Div7" />
+          <Property Type="Int32" Name="Div1Winners" />
+          <Property Type="Int32" Name="Div2Winners" />
+          <Property Type="Int32" Name="Div3Winners" />
+          <Property Type="Int32" Name="Div4Winners" />
+          <Property Type="Int32" Name="Div5Winners" />
+          <Property Type="Int32" Name="Div6Winners" />
+          <Property Type="Int32" Name="Div7Winners" />
+          <NavigationProperty Name="SimulatedDraw" Relationship="Lottron2000Model.FK_SimulatedDrawPrize_SimulatedDraw" FromRole="SimulatedDrawPrize" ToRole="SimulatedDraw" />
+        </EntityType>
+        <EntityType Name="SimulatedDrawResult">
+          <Key>
+            <PropertyRef Name="SimulatedDrawResultID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SimulatedDrawResultID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SimulatedDrawID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="AmountWon" />
+          <Property Type="Int32" Name="AmountLost" />
+          <Property Type="Int32" Name="AmountSpent" />
+          <Property Type="Int32" Name="Num1Matches" />
+          <Property Type="Int32" Name="Num2Matches" />
+          <Property Type="Int32" Name="Num3Matches" />
+          <Property Type="Int32" Name="Num4Matches" />
+          <Property Type="Int32" Name="Num5Matches" />
+          <Property Type="Int32" Name="Num6Matches" />
+          <Property Type="Int32" Name="BonusMatches" />
+          <Property Type="DateTime" Name="Created" Precision="3" />
+          <NavigationProperty Name="SimulatedDraw" Relationship="Lottron2000Model.FK_SimulatedDrawResult_SimulatedDraw" FromRole="SimulatedDrawResult" ToRole="SimulatedDraw" />
+        </EntityType>
+        <EntityType Name="SimulatedDrawTicket">
+          <Key>
+            <PropertyRef Name="SimulatedDrawTicketID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SimulatedDrawTicketID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SimulatedDrawID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Num1" />
+          <Property Type="Int32" Name="Num2" />
+          <Property Type="Int32" Name="Num3" />
+          <Property Type="Int32" Name="Num4" />
+          <Property Type="Int32" Name="Num5" />
+          <Property Type="Int32" Name="Num6" />
+          <Property Type="Int32" Name="NumCheckSum" />
+          <Property Type="Int32" Name="NumAndBonusCheckSum" />
+          <Property Type="Int32" Name="Bonus" />
+          <Property Type="DateTime" Name="Created" Precision="3" />
+          <NavigationProperty Name="SimulatedDraw" Relationship="Lottron2000Model.FK_SimulatedDrawTicket_SimulatedDraw" FromRole="SimulatedDrawTicket" ToRole="SimulatedDraw" />
+        </EntityType>
+        <EntityType Name="SimulatedDrawTicketResult">
+          <Key>
+            <PropertyRef Name="SimulatedDrawTicketResultID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SimulatedDrawTicketResultID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SimulatedDrawTicketID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DrawSubCategory" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WinningDivision" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="NumberOfMatches" Nullable="false" />
+          <Property Type="Boolean" Name="BonusMatch" Nullable="false" />
+          <Property Type="Boolean" Name="IsJackpotWinner" Nullable="false" />
+          <Property Type="Int32" Name="AmountWon" Nullable="false" />
+          <Property Type="DateTime" Name="Created" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="SimulatedDrawWinningNumber">
+          <Key>
+            <PropertyRef Name="SimulatedDrawWinningNumbersID" />
+          </Key>
+          <Property Type="Int32" Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SimulatedDrawWinningNumbersID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SimulatedDrawID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DrawSubCategory" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Num1" />
+          <Property Type="Int32" Name="Num2" />
+          <Property Type="Int32" Name="Num3" />
+          <Property Type="Int32" Name="Num4" />
+          <Property Type="Int32" Name="Num5" />
+          <Property Type="Int32" Name="Num6" />
+          <Property Type="Int32" Name="NumCheckSum" />
+          <Property Type="Int32" Name="Bonus" />
+          <Property Type="DateTime" Name="Created" Precision="3" />
+        </EntityType>
+        <EntityType Name="WinningChance">
+          <Key>
+            <PropertyRef Name="WinningChanceID" />
+          </Key>
+          <Property Type="Int32" Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="WinningChanceID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PayoutOrder" />
+          <Property Type="String" Name="Division" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Odds" />
+          <Property Type="Decimal" Name="Fraction" Precision="15" Scale="10" />
+          <Property Type="Decimal" Name="Percentage" Precision="15" Scale="10" />
+          <Property Type="String" Name="DivisionDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WinningNumberPermutation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Number1" />
+          <Property Type="Int32" Name="Number2" />
+          <Property Type="Int32" Name="Number3" />
+          <Property Type="Int32" Name="Number4" />
+          <Property Type="Int32" Name="Number5" />
+          <Property Type="Int32" Name="Number6" />
+          <Property Type="Int32" Name="Bonus" />
+          <Property Type="Int32" Name="CheckSum" />
+          <Property Type="DateTime" Name="Created" Precision="3" />
+        </EntityType>
+        <Association Name="FK_SimulatedDraw_PlayingSession">
+          <End Type="Lottron2000Model.PlayingSession" Role="PlayingSession" Multiplicity="0..1" />
+          <End Type="Lottron2000Model.SimulatedDraw" Role="SimulatedDraw" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayingSession">
+              <PropertyRef Name="PlayingSessionID" />
+            </Principal>
+            <Dependent Role="SimulatedDraw">
+              <PropertyRef Name="PlayingSessionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SALottoPlusResultCheckSum_ResultCheckSumSA">
+          <End Type="Lottron2000Model.ResultCheckSumSa" Role="ResultCheckSumSa" Multiplicity="0..1" />
+          <End Type="Lottron2000Model.SALottoPlusResultCheckSum" Role="SALottoPlusResultCheckSum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResultCheckSumSa">
+              <PropertyRef Name="ResultCheckSumSaID" />
+            </Principal>
+            <Dependent Role="SALottoPlusResultCheckSum">
+              <PropertyRef Name="ResultCheckSumSaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SALottoResultCheckSum_ResultCheckSumSA">
+          <End Type="Lottron2000Model.ResultCheckSumSa" Role="ResultCheckSumSa" Multiplicity="1" />
+          <End Type="Lottron2000Model.SALottoResultCheckSum" Role="SALottoResultCheckSum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResultCheckSumSa">
+              <PropertyRef Name="ResultCheckSumSaID" />
+            </Principal>
+            <Dependent Role="SALottoResultCheckSum">
+              <PropertyRef Name="ResultCheckSumSaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SALottoPlusResultCheckSum_SALottoPlusResult">
+          <End Type="Lottron2000Model.SALottoPlusResult" Role="SALottoPlusResult" Multiplicity="0..1" />
+          <End Type="Lottron2000Model.SALottoPlusResultCheckSum" Role="SALottoPlusResultCheckSum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SALottoPlusResult">
+              <PropertyRef Name="SALottoPlusResultID" />
+            </Principal>
+            <Dependent Role="SALottoPlusResultCheckSum">
+              <PropertyRef Name="SALottoPlusResultID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SALottoResultCheckSum_SALottoResult">
+          <End Type="Lottron2000Model.SALottoResult" Role="SALottoResult" Multiplicity="1" />
+          <End Type="Lottron2000Model.SALottoResultCheckSum" Role="SALottoResultCheckSum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SALottoResult">
+              <PropertyRef Name="SALottoResultID" />
+            </Principal>
+            <Dependent Role="SALottoResultCheckSum">
+              <PropertyRef Name="SALottoResultID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SimulatedDrawPrize_SimulatedDraw">
+          <End Type="Lottron2000Model.SimulatedDraw" Role="SimulatedDraw" Multiplicity="0..1" />
+          <End Type="Lottron2000Model.SimulatedDrawPrize" Role="SimulatedDrawPrize" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SimulatedDraw">
+              <PropertyRef Name="SimulatedDrawID" />
+            </Principal>
+            <Dependent Role="SimulatedDrawPrize">
+              <PropertyRef Name="SimulatedDrawID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SimulatedDrawResult_SimulatedDraw">
+          <End Type="Lottron2000Model.SimulatedDraw" Role="SimulatedDraw" Multiplicity="0..1" />
+          <End Type="Lottron2000Model.SimulatedDrawResult" Role="SimulatedDrawResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SimulatedDraw">
+              <PropertyRef Name="SimulatedDrawID" />
+            </Principal>
+            <Dependent Role="SimulatedDrawResult">
+              <PropertyRef Name="SimulatedDrawID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SimulatedDrawTicket_SimulatedDraw">
+          <End Type="Lottron2000Model.SimulatedDraw" Role="SimulatedDraw" Multiplicity="0..1" />
+          <End Type="Lottron2000Model.SimulatedDrawTicket" Role="SimulatedDrawTicket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SimulatedDraw">
+              <PropertyRef Name="SimulatedDrawID" />
+            </Principal>
+            <Dependent Role="SimulatedDrawTicket">
+              <PropertyRef Name="SimulatedDrawID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Lottron2000ModelStoreContainer" CdmEntityContainer="LottronEntities">
+          <EntitySetMapping Name="DrawPayouts">
+            <EntityTypeMapping TypeName="Lottron2000Model.DrawPayout">
+              <MappingFragment StoreEntitySet="DrawPayout">
+                <ScalarProperty Name="AveragePayout" ColumnName="AveragePayout" />
+                <ScalarProperty Name="AverageWinners" ColumnName="AverageWinners" />
+                <ScalarProperty Name="TotalPayout" ColumnName="TotalPayout" />
+                <ScalarProperty Name="TotalWinners" ColumnName="TotalWinners" />
+                <ScalarProperty Name="TotalDrawEvents" ColumnName="TotalDrawEvents" />
+                <ScalarProperty Name="PerionEnd" ColumnName="PerionEnd" />
+                <ScalarProperty Name="PeriodStart" ColumnName="PeriodStart" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="DrawPayoutID" ColumnName="DrawPayoutID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MockWinningPrizes">
+            <EntityTypeMapping TypeName="Lottron2000Model.MockWinningPrize">
+              <MappingFragment StoreEntitySet="MockWinningPrize">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="Div7" ColumnName="Div7" />
+                <ScalarProperty Name="Div6" ColumnName="Div6" />
+                <ScalarProperty Name="Div5" ColumnName="Div5" />
+                <ScalarProperty Name="Div4" ColumnName="Div4" />
+                <ScalarProperty Name="Div3" ColumnName="Div3" />
+                <ScalarProperty Name="Div2" ColumnName="Div2" />
+                <ScalarProperty Name="Div1" ColumnName="Div1" />
+                <ScalarProperty Name="DrawSubCategory" ColumnName="DrawSubCategory" />
+                <ScalarProperty Name="SourceDrawNo" ColumnName="SourceDrawNo" />
+                <ScalarProperty Name="MockWinningPrizeID" ColumnName="MockWinningPrizeID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MockWinningPrizeShares">
+            <EntityTypeMapping TypeName="Lottron2000Model.MockWinningPrizeShare">
+              <MappingFragment StoreEntitySet="MockWinningPrizeShare">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="Div7Winners" ColumnName="Div7Winners" />
+                <ScalarProperty Name="Div6Winners" ColumnName="Div6Winners" />
+                <ScalarProperty Name="Div5Winners" ColumnName="Div5Winners" />
+                <ScalarProperty Name="Div4Winners" ColumnName="Div4Winners" />
+                <ScalarProperty Name="Div3Winners" ColumnName="Div3Winners" />
+                <ScalarProperty Name="Div2Winners" ColumnName="Div2Winners" />
+                <ScalarProperty Name="Div1Winners" ColumnName="Div1Winners" />
+                <ScalarProperty Name="DrawSubCategory" ColumnName="DrawSubCategory" />
+                <ScalarProperty Name="SourceDrawNo" ColumnName="SourceDrawNo" />
+                <ScalarProperty Name="MockWinningPrizeShareID" ColumnName="MockWinningPrizeShareID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlayingSessions">
+            <EntityTypeMapping TypeName="Lottron2000Model.PlayingSession">
+              <MappingFragment StoreEntitySet="PlayingSession">
+                <ScalarProperty Name="PublishStatus" ColumnName="PublishStatus" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Objectives" ColumnName="Objectives" />
+                <ScalarProperty Name="UserFriendlyReference" ColumnName="UserFriendlyReference" />
+                <ScalarProperty Name="SimulationType" ColumnName="SimulationType" />
+                <ScalarProperty Name="PlayingSessionID" ColumnName="PlayingSessionID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResultCheckSumSas">
+            <EntityTypeMapping TypeName="Lottron2000Model.ResultCheckSumSa">
+              <MappingFragment StoreEntitySet="ResultCheckSumSa">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="LastComputed" ColumnName="LastComputed" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="OccuranceRatio" ColumnName="OccuranceRatio" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="CheckSum" ColumnName="CheckSum" />
+                <ScalarProperty Name="DrawSubCategory" ColumnName="DrawSubCategory" />
+                <ScalarProperty Name="ResultCheckSumSaID" ColumnName="ResultCheckSumSaID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SALottoPlusResults">
+            <EntityTypeMapping TypeName="Lottron2000Model.SALottoPlusResult">
+              <MappingFragment StoreEntitySet="SALottoPlusResult">
+                <ScalarProperty Name="BallSet" ColumnName="BallSet" />
+                <ScalarProperty Name="DrawMachine" ColumnName="DrawMachine" />
+                <ScalarProperty Name="TotalSales" ColumnName="TotalSales" />
+                <ScalarProperty Name="NextGuaranteedJackpot" ColumnName="NextGuaranteedJackpot" />
+                <ScalarProperty Name="NextEstimatedJackpot" ColumnName="NextEstimatedJackpot" />
+                <ScalarProperty Name="RolloverCount" ColumnName="RolloverCount" />
+                <ScalarProperty Name="Rollover" ColumnName="Rollover" />
+                <ScalarProperty Name="PrizePayable" ColumnName="PrizePayable" />
+                <ScalarProperty Name="Div7Winners" ColumnName="Div7Winners" />
+                <ScalarProperty Name="Div6NoWinners" ColumnName="Div6NoWinners" />
+                <ScalarProperty Name="Div5Winners" ColumnName="Div5Winners" />
+                <ScalarProperty Name="Div4Winners" ColumnName="Div4Winners" />
+                <ScalarProperty Name="Div3Winners" ColumnName="Div3Winners" />
+                <ScalarProperty Name="Div2NoWinners" ColumnName="Div2NoWinners" />
+                <ScalarProperty Name="Div1Winners" ColumnName="Div1Winners" />
+                <ScalarProperty Name="Div7" ColumnName="Div7" />
+                <ScalarProperty Name="Div6" ColumnName="Div6" />
+                <ScalarProperty Name="Div5" ColumnName="Div5" />
+                <ScalarProperty Name="Div4" ColumnName="Div4" />
+                <ScalarProperty Name="Div3" ColumnName="Div3" />
+                <ScalarProperty Name="Div2" ColumnName="Div2" />
+                <ScalarProperty Name="Div1" ColumnName="Div1" />
+                <ScalarProperty Name="CheckSum" ColumnName="CheckSum" />
+                <ScalarProperty Name="BonusBall" ColumnName="BonusBall" />
+                <ScalarProperty Name="Ball6" ColumnName="Ball6" />
+                <ScalarProperty Name="Ball5" ColumnName="Ball5" />
+                <ScalarProperty Name="Ball4" ColumnName="Ball4" />
+                <ScalarProperty Name="Ball3" ColumnName="Ball3" />
+                <ScalarProperty Name="Ball2" ColumnName="Ball2" />
+                <ScalarProperty Name="Ball1" ColumnName="Ball1" />
+                <ScalarProperty Name="DrawDate" ColumnName="DrawDate" />
+                <ScalarProperty Name="DrawNo" ColumnName="DrawNo" />
+                <ScalarProperty Name="SALottoPlusResultID" ColumnName="SALottoPlusResultID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SALottoPlusResultCheckSums">
+            <EntityTypeMapping TypeName="Lottron2000Model.SALottoPlusResultCheckSum">
+              <MappingFragment StoreEntitySet="SALottoPlusResultCheckSum">
+                <ScalarProperty Name="SALottoPlusResultID" ColumnName="SALottoPlusResultID" />
+                <ScalarProperty Name="ResultCheckSumSaID" ColumnName="ResultCheckSumSaID" />
+                <ScalarProperty Name="SALottoPlusResultCheckSumID" ColumnName="SALottoPlusResultCheckSumID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SALottoResults">
+            <EntityTypeMapping TypeName="Lottron2000Model.SALottoResult">
+              <MappingFragment StoreEntitySet="SALottoResult">
+                <ScalarProperty Name="BallSet" ColumnName="BallSet" />
+                <ScalarProperty Name="DrawMachine" ColumnName="DrawMachine" />
+                <ScalarProperty Name="TotalSales" ColumnName="TotalSales" />
+                <ScalarProperty Name="NextGuaranteedJackpot" ColumnName="NextGuaranteedJackpot" />
+                <ScalarProperty Name="NextEstimatedJackpot" ColumnName="NextEstimatedJackpot" />
+                <ScalarProperty Name="RolloverCount" ColumnName="RolloverCount" />
+                <ScalarProperty Name="Rollover" ColumnName="Rollover" />
+                <ScalarProperty Name="PrizePayable" ColumnName="PrizePayable" />
+                <ScalarProperty Name="Div7Winners" ColumnName="Div7Winners" />
+                <ScalarProperty Name="Div6NoWinners" ColumnName="Div6NoWinners" />
+                <ScalarProperty Name="Div5Winners" ColumnName="Div5Winners" />
+                <ScalarProperty Name="Div4Winners" ColumnName="Div4Winners" />
+                <ScalarProperty Name="Div3Winners" ColumnName="Div3Winners" />
+                <ScalarProperty Name="Div2NoWinners" ColumnName="Div2NoWinners" />
+                <ScalarProperty Name="Div1Winners" ColumnName="Div1Winners" />
+                <ScalarProperty Name="Div7" ColumnName="Div7" />
+                <ScalarProperty Name="Div6" ColumnName="Div6" />
+                <ScalarProperty Name="Div5" ColumnName="Div5" />
+                <ScalarProperty Name="Div4" ColumnName="Div4" />
+                <ScalarProperty Name="Div3" ColumnName="Div3" />
+                <ScalarProperty Name="Div2" ColumnName="Div2" />
+                <ScalarProperty Name="Div1" ColumnName="Div1" />
+                <ScalarProperty Name="CheckSum" ColumnName="CheckSum" />
+                <ScalarProperty Name="BonusBall" ColumnName="BonusBall" />
+                <ScalarProperty Name="Ball6" ColumnName="Ball6" />
+                <ScalarProperty Name="Ball5" ColumnName="Ball5" />
+                <ScalarProperty Name="Ball4" ColumnName="Ball4" />
+                <ScalarProperty Name="Ball3" ColumnName="Ball3" />
+                <ScalarProperty Name="Ball2" ColumnName="Ball2" />
+                <ScalarProperty Name="Ball1" ColumnName="Ball1" />
+                <ScalarProperty Name="DrawDate" ColumnName="DrawDate" />
+                <ScalarProperty Name="DrawNo" ColumnName="DrawNo" />
+                <ScalarProperty Name="SALottoResultID" ColumnName="SALottoResultID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SALottoResultCheckSums">
+            <EntityTypeMapping TypeName="Lottron2000Model.SALottoResultCheckSum">
+              <MappingFragment StoreEntitySet="SALottoResultCheckSum">
+                <ScalarProperty Name="SALottoResultID" ColumnName="SALottoResultID" />
+                <ScalarProperty Name="ResultCheckSumSaID" ColumnName="ResultCheckSumSaID" />
+                <ScalarProperty Name="SALottoResultCheckSumID" ColumnName="SALottoResultCheckSumID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SATicketPrices">
+            <EntityTypeMapping TypeName="Lottron2000Model.SATicketPrice">
+              <MappingFragment StoreEntitySet="SATicketPrice">
+                <ScalarProperty Name="TicketPrice" ColumnName="TicketPrice" />
+                <ScalarProperty Name="LottoType" ColumnName="LottoType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SimulatedDraws">
+            <EntityTypeMapping TypeName="Lottron2000Model.SimulatedDraw">
+              <MappingFragment StoreEntitySet="SimulatedDraw">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="DrawPrizeGenerationMethod" ColumnName="DrawPrizeGenerationMethod" />
+                <ScalarProperty Name="PlayingNumbersGenerationMethod" ColumnName="PlayingNumbersGenerationMethod" />
+                <ScalarProperty Name="WinningNumbersGenerationMethod" ColumnName="WinningNumbersGenerationMethod" />
+                <ScalarProperty Name="SimulationType" ColumnName="SimulationType" />
+                <ScalarProperty Name="PlayingSessionID" ColumnName="PlayingSessionID" />
+                <ScalarProperty Name="SimulatedDrawID" ColumnName="SimulatedDrawID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SimulatedDrawPrizes">
+            <EntityTypeMapping TypeName="Lottron2000Model.SimulatedDrawPrize">
+              <MappingFragment StoreEntitySet="SimulatedDrawPrize">
+                <ScalarProperty Name="Div7Winners" ColumnName="Div7Winners" />
+                <ScalarProperty Name="Div6Winners" ColumnName="Div6Winners" />
+                <ScalarProperty Name="Div5Winners" ColumnName="Div5Winners" />
+                <ScalarProperty Name="Div4Winners" ColumnName="Div4Winners" />
+                <ScalarProperty Name="Div3Winners" ColumnName="Div3Winners" />
+                <ScalarProperty Name="Div2Winners" ColumnName="Div2Winners" />
+                <ScalarProperty Name="Div1Winners" ColumnName="Div1Winners" />
+                <ScalarProperty Name="Div7" ColumnName="Div7" />
+                <ScalarProperty Name="Div6" ColumnName="Div6" />
+                <ScalarProperty Name="Div5" ColumnName="Div5" />
+                <ScalarProperty Name="Div4" ColumnName="Div4" />
+                <ScalarProperty Name="Div3" ColumnName="Div3" />
+                <ScalarProperty Name="Div2" ColumnName="Div2" />
+                <ScalarProperty Name="Div1" ColumnName="Div1" />
+                <ScalarProperty Name="DrawSubCategory" ColumnName="DrawSubCategory" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="SimulatedDrawID" ColumnName="SimulatedDrawID" />
+                <ScalarProperty Name="SimulatedDrawPrizeID" ColumnName="SimulatedDrawPrizeID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SimulatedDrawResults">
+            <EntityTypeMapping TypeName="Lottron2000Model.SimulatedDrawResult">
+              <MappingFragment StoreEntitySet="SimulatedDrawResult">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="BonusMatches" ColumnName="BonusMatches" />
+                <ScalarProperty Name="Num6Matches" ColumnName="Num6Matches" />
+                <ScalarProperty Name="Num5Matches" ColumnName="Num5Matches" />
+                <ScalarProperty Name="Num4Matches" ColumnName="Num4Matches" />
+                <ScalarProperty Name="Num3Matches" ColumnName="Num3Matches" />
+                <ScalarProperty Name="Num2Matches" ColumnName="Num2Matches" />
+                <ScalarProperty Name="Num1Matches" ColumnName="Num1Matches" />
+                <ScalarProperty Name="AmountSpent" ColumnName="AmountSpent" />
+                <ScalarProperty Name="AmountLost" ColumnName="AmountLost" />
+                <ScalarProperty Name="AmountWon" ColumnName="AmountWon" />
+                <ScalarProperty Name="SimulatedDrawID" ColumnName="SimulatedDrawID" />
+                <ScalarProperty Name="SimulatedDrawResultID" ColumnName="SimulatedDrawResultID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SimulatedDrawTickets">
+            <EntityTypeMapping TypeName="Lottron2000Model.SimulatedDrawTicket">
+              <MappingFragment StoreEntitySet="SimulatedDrawTicket">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+                <ScalarProperty Name="NumAndBonusCheckSum" ColumnName="NumAndBonusCheckSum" />
+                <ScalarProperty Name="NumCheckSum" ColumnName="NumCheckSum" />
+                <ScalarProperty Name="Num6" ColumnName="Num6" />
+                <ScalarProperty Name="Num5" ColumnName="Num5" />
+                <ScalarProperty Name="Num4" ColumnName="Num4" />
+                <ScalarProperty Name="Num3" ColumnName="Num3" />
+                <ScalarProperty Name="Num2" ColumnName="Num2" />
+                <ScalarProperty Name="Num1" ColumnName="Num1" />
+                <ScalarProperty Name="SimulatedDrawID" ColumnName="SimulatedDrawID" />
+                <ScalarProperty Name="SimulatedDrawTicketID" ColumnName="SimulatedDrawTicketID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SimulatedDrawTicketResults">
+            <EntityTypeMapping TypeName="Lottron2000Model.SimulatedDrawTicketResult">
+              <MappingFragment StoreEntitySet="SimulatedDrawTicketResult">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="AmountWon" ColumnName="AmountWon" />
+                <ScalarProperty Name="IsJackpotWinner" ColumnName="IsJackpotWinner" />
+                <ScalarProperty Name="BonusMatch" ColumnName="BonusMatch" />
+                <ScalarProperty Name="NumberOfMatches" ColumnName="NumberOfMatches" />
+                <ScalarProperty Name="WinningDivision" ColumnName="WinningDivision" />
+                <ScalarProperty Name="DrawSubCategory" ColumnName="DrawSubCategory" />
+                <ScalarProperty Name="SimulatedDrawTicketID" ColumnName="SimulatedDrawTicketID" />
+                <ScalarProperty Name="SimulatedDrawTicketResultID" ColumnName="SimulatedDrawTicketResultID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SimulatedDrawWinningNumbers">
+            <EntityTypeMapping TypeName="Lottron2000Model.SimulatedDrawWinningNumber">
+              <MappingFragment StoreEntitySet="SimulatedDrawWinningNumber">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+                <ScalarProperty Name="NumCheckSum" ColumnName="NumCheckSum" />
+                <ScalarProperty Name="Num6" ColumnName="Num6" />
+                <ScalarProperty Name="Num5" ColumnName="Num5" />
+                <ScalarProperty Name="Num4" ColumnName="Num4" />
+                <ScalarProperty Name="Num3" ColumnName="Num3" />
+                <ScalarProperty Name="Num2" ColumnName="Num2" />
+                <ScalarProperty Name="Num1" ColumnName="Num1" />
+                <ScalarProperty Name="DrawSubCategory" ColumnName="DrawSubCategory" />
+                <ScalarProperty Name="SimulatedDrawID" ColumnName="SimulatedDrawID" />
+                <ScalarProperty Name="SimulatedDrawWinningNumbersID" ColumnName="SimulatedDrawWinningNumbersID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WinningChances">
+            <EntityTypeMapping TypeName="Lottron2000Model.WinningChance">
+              <MappingFragment StoreEntitySet="WinningChance">
+                <ScalarProperty Name="DivisionDescription" ColumnName="DivisionDescription" />
+                <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+                <ScalarProperty Name="Fraction" ColumnName="Fraction" />
+                <ScalarProperty Name="Odds" ColumnName="Odds" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="PayoutOrder" ColumnName="PayoutOrder" />
+                <ScalarProperty Name="WinningChanceID" ColumnName="WinningChanceID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WinningNumberPermutations">
+            <EntityTypeMapping TypeName="Lottron2000Model.WinningNumberPermutation">
+              <MappingFragment StoreEntitySet="WinningNumberPermutation">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CheckSum" ColumnName="CheckSum" />
+                <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+                <ScalarProperty Name="Number6" ColumnName="Number6" />
+                <ScalarProperty Name="Number5" ColumnName="Number5" />
+                <ScalarProperty Name="Number4" ColumnName="Number4" />
+                <ScalarProperty Name="Number3" ColumnName="Number3" />
+                <ScalarProperty Name="Number2" ColumnName="Number2" />
+                <ScalarProperty Name="Number1" ColumnName="Number1" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
