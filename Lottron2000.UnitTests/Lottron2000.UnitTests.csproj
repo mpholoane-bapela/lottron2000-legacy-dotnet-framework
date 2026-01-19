@@ -82,10 +82,6 @@
       <Project>{bef4a100-80a0-433d-8387-899a27cfc7a5}</Project>
       <Name>Lottron2000.BusinessLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lottron2000.DataExtraction\Lottron2000.DataExtraction.csproj">
-      <Project>{56564dd6-7125-4f6e-9bb3-7f642730bedb}</Project>
-      <Name>Lottron2000.DataExtraction</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Lottron2000.Data\Lottron2000.Data.csproj">
       <Project>{2430a66e-497a-4ab8-9d5d-87849264c2b0}</Project>
       <Name>Lottron2000.Data</Name>

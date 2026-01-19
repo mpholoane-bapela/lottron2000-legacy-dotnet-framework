@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.0.11217.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lottron2000.DataExtraction", "Lottron2000.DataExtraction\Lottron2000.DataExtraction.csproj", "{56564DD6-7125-4F6E-9BB3-7F642730BEDB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lottron2000.Data", "Lottron2000.Data\Lottron2000.Data.csproj", "{2430A66E-497A-4AB8-9D5D-87849264C2B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lottron2000.UnitTests", "Lottron2000.UnitTests\Lottron2000.UnitTests.csproj", "{000BF2E9-1989-4732-8B79-FC9CDBF77861}"
@@ -16,10 +14,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lottron2000.Ydin", "Lottron2000.Ydin\Lottron2000.Ydin.csproj", "{CA9D313B-FE38-4A54-8A8B-D4D5BE59F23E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{A5EAF577-9666-485A-ADB2-7383F248F396}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lottron2000.DataExtraction.ConsoleApps", "Lottron2000.DataExtraction.ConsoleApps\Lottron2000.DataExtraction.ConsoleApps.csproj", "{3F311092-C2F5-4412-B384-7F98143093C2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataExtraction", "DataExtraction", "{211B0EEB-CF10-47FE-B3C5-E24FE877D4D3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProfilingTests", "ProfilingTests", "{E7A131B8-68E6-4B63-9BF1-E00D74657449}"
 EndProject
@@ -37,10 +31,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{56564DD6-7125-4F6E-9BB3-7F642730BEDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56564DD6-7125-4F6E-9BB3-7F642730BEDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56564DD6-7125-4F6E-9BB3-7F642730BEDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56564DD6-7125-4F6E-9BB3-7F642730BEDB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2430A66E-497A-4AB8-9D5D-87849264C2B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2430A66E-497A-4AB8-9D5D-87849264C2B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2430A66E-497A-4AB8-9D5D-87849264C2B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -61,10 +51,6 @@ Global
 		{CA9D313B-FE38-4A54-8A8B-D4D5BE59F23E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA9D313B-FE38-4A54-8A8B-D4D5BE59F23E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA9D313B-FE38-4A54-8A8B-D4D5BE59F23E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3F311092-C2F5-4412-B384-7F98143093C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F311092-C2F5-4412-B384-7F98143093C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F311092-C2F5-4412-B384-7F98143093C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F311092-C2F5-4412-B384-7F98143093C2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B1AEC42C-E68F-4403-BC3A-06734E06162E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B1AEC42C-E68F-4403-BC3A-06734E06162E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1AEC42C-E68F-4403-BC3A-06734E06162E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -74,9 +60,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{56564DD6-7125-4F6E-9BB3-7F642730BEDB} = {211B0EEB-CF10-47FE-B3C5-E24FE877D4D3}
 		{000BF2E9-1989-4732-8B79-FC9CDBF77861} = {A5EAF577-9666-485A-ADB2-7383F248F396}
-		{3F311092-C2F5-4412-B384-7F98143093C2} = {211B0EEB-CF10-47FE-B3C5-E24FE877D4D3}
 		{B1AEC42C-E68F-4403-BC3A-06734E06162E} = {E7A131B8-68E6-4B63-9BF1-E00D74657449}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
