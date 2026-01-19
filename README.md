@@ -1,27 +1,26 @@
-﻿# Lottron2000 – Legacy .NET Framework Lottery Simulation System (EF6, SQL Server)
+# Lottron2000 – Legacy .NET Framework Lottery Simulation System (EF6, SQL Server)
 
 Lottron2000 is a **legacy .NET Framework 4.8 lottery simulation system** built using **C#**, **Entity Framework 6**, and **SQL Server**.  
 It represents a **real-world, enterprise, monolithic, pre-.NET Core application** originally developed around **2013**.
 
 This repository is preserved for **educational and architectural analysis**, with a focus on **legacy system design, technical debt, refactoring strategy, and modernization planning**.
 
-> 📌 **EDUCATIONAL VIDEO CONTENT**
-> 
-> **The Youtube Playlist**
-> 
-Series of videos that show how this old legacy code is rewritten.
+---
 
-https://youtu.be/P26t5EVz70U
+## 📌 Educational Video Content
 
-https://www.youtube.com/@CodelessDeveloper
+A series of videos demonstrating how this old legacy code is being rewritten:
+
+**YouTube Playlist:** [Watch the Series](https://youtu.be/P26t5EVz70U)  
+**Channel:** [@CodelessDeveloper](https://www.youtube.com/@CodelessDeveloper)
 
 ---
 
-> ⚠️ **IMPORTANT NOTICE**
->
-> **This solution DOES NOT compile and DOES NOT include a database.**
->
-> It is intentionally incomplete and provided *as-is* as a reference for studying legacy .NET Framework applications.
+## ⚠️ IMPORTANT NOTICE
+
+**This solution DOES NOT compile and DOES NOT include a database.**
+
+It is intentionally incomplete and provided *as-is* as a reference for studying legacy .NET Framework applications.
 
 ---
 
@@ -29,7 +28,7 @@ https://www.youtube.com/@CodelessDeveloper
 
 - ❌ The solution **will not build successfully**
 - ❌ The **SQL Server database is not included**
-- ❌ Entity Framework connection strings reference a **non-existent local machine**
+- ❌ Entity Framework connection strings reference a **non-existent local machine** (`ebapela-pc`)
 - ❌ This project is **not production-ready**
 - ❌ No setup, configuration, or installation support is provided
 
@@ -82,8 +81,6 @@ Lottron2000/
  ├─ Lottron2000.Data
  ├─ Lottron2000.Models
  ├─ Lottron2000.UnitTests
- ├─ Lottron2000.DataExtraction
- ├─ Lottron2000.DataExtraction.ConsoleApps
  └─ IntegrationProfilingTests
 ```
 
@@ -95,71 +92,51 @@ Lottron2000/
 
 Core business logic including:
 
-* Lottery number generation
-* Simulated draws
-* Winning prize calculations
-* Playing session workflows
-
----
+- Lottery number generation
+- Simulated draws
+- Winning prize calculations
+- Playing session workflows
 
 ### Lottron2000.Data
 
 Data access layer built with **Entity Framework 6**:
 
-* Database context configuration
-* Repository-style data access
-* Checksum handling
-* SQL Server dependencies (not included)
-
----
+- Database context configuration
+- Repository-style data access
+- Checksum handling
+- SQL Server dependencies (not included)
 
 ### Lottron2000.Models
 
 Shared domain models and entity definitions used across the solution.
 
----
-
 ### Lottron2000.UnitTests
 
 Unit testing project containing:
 
-* Lottery number generation tests
-* Simulated draw validation
-* Prize calculation tests
-* Legacy `App.config` with EF configuration
+- Lottery number generation tests
+- Simulated draw validation
+- Prize calculation tests
+- Legacy `App.config` with EF configuration
 
 > ⚠️ Unit tests **cannot run** due to missing database dependencies.
-
----
-
-### Data Extraction Projects
-
-* `Lottron2000.DataExtraction`
-* `Lottron2000.DataExtraction.ConsoleApps`
-
-Used for:
-
-* Lottery data extraction
-* Console-based data processing utilities
-
----
 
 ### IntegrationProfilingTests
 
 Contains:
 
-* Integration-style tests
-* Performance and profiling experiments
+- Integration-style tests
+- Performance and profiling experiments
 
 ---
 
 ## 🗄️ Database & Entity Framework Configuration
 
-* **Database:** SQL Server
-* **ORM:** Entity Framework 6
-* **Database schema:** ❌ Not included
-* **Migrations:** ❌ Not included
-* **Connection strings:** Reference a legacy local machine (`ebapela-pc`)
+- **Database:** SQL Server
+- **ORM:** Entity Framework 6
+- **Database schema:** ❌ Not included
+- **Migrations:** ❌ Not included
+- **Connection strings:** Reference a legacy local machine (`ebapela-pc`)
 
 All database-related assets have been **intentionally excluded** from source control.
 
@@ -169,10 +146,10 @@ All database-related assets have been **intentionally excluded** from source con
 
 The solution does not compile because:
 
-* The required SQL Server database schema is missing
-* Entity Framework connection strings reference a non-existent environment
-* Certain legacy dependencies are no longer available
-* The codebase has not been modernized for current tooling
+- The required SQL Server database schema is missing
+- Entity Framework connection strings reference a non-existent environment
+- Certain legacy dependencies are no longer available
+- The codebase has not been modernized for current tooling
 
 This behavior is **intentional**.
 
@@ -182,26 +159,26 @@ This behavior is **intentional**.
 
 This repository is useful for:
 
-* Studying **legacy .NET Framework enterprise applications**
-* Understanding **monolithic, layered, pre-.NET Core architectures**
-* Reviewing **Entity Framework 6 patterns**
-* Practicing:
-  * Codebase analysis
-  * Refactoring strategies
-  * Technical debt assessment
-  * Dependency cleanup
-  * Modernization planning
-* Comparing legacy systems with **modern .NET best practices**
+- Studying **legacy .NET Framework enterprise applications**
+- Understanding **monolithic, layered, pre-.NET Core architectures**
+- Reviewing **Entity Framework 6 patterns**
+- Practicing:
+  - Codebase analysis
+  - Refactoring strategies
+  - Technical debt assessment
+  - Dependency cleanup
+  - Modernization planning
+- Comparing legacy systems with **modern .NET best practices**
 
 ---
 
 ## 🚫 What This Repository Is NOT
 
-* ❌ A runnable application
-* ❌ A starter template
-* ❌ A tutorial
-* ❌ Production-quality software
-* ❌ A complete system
+- ❌ A runnable application
+- ❌ A starter template
+- ❌ A tutorial
+- ❌ Production-quality software
+- ❌ A complete system
 
 ---
 
@@ -217,9 +194,9 @@ This project is provided for **educational and reference purposes**.
 
 If you are reviewing this repository as part of a portfolio:
 
-* Focus on **architecture, structure, and intent**
-* Treat this codebase as a **snapshot in time**
-* Recognize that best practices have evolved significantly since its original implementation
+- Focus on **architecture, structure, and intent**
+- Treat this codebase as a **snapshot in time**
+- Recognize that best practices have evolved significantly since its original implementation
 
 ---
 
