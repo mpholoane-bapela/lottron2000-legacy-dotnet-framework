@@ -426,3 +426,5 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+# Ignore Vim swap files
+*.swp
